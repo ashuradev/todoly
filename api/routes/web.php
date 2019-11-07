@@ -1,3 +1,10 @@
 <?php
 
-$router->get('/todos', 'TodoController@index');
+/** @var \Laravel\Lumen\Routing\Router $router */
+
+$router->group(['prefix' => 'todos'], function () use ($router) {
+    $router->get('/', 'TodoController@index');
+    $router->post('/', 'TodoController@store');
+});
+
+
