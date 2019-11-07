@@ -52,6 +52,8 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
 
+        if (! $todo) abort(404);
+
         $todo->update($request->all());
 
         return new TodoResource($todo);
