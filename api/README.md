@@ -8,7 +8,7 @@ API do Todoly feita com Lumen.
 - [x] Iniciar o banco de dados (models, factories, migrations, etc)
 - [x] Criar controller de Todos
 - [x] Listar e buscar todos
-- [ ] Adicionar todos
+- [x] Adicionar todos
 - [ ] Atualizar todos
 - [ ] Remover todos
 - [ ] Melhorar o código e testar tudo
