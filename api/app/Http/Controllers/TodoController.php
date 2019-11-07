@@ -58,4 +58,23 @@ class TodoController extends Controller
 
         return new TodoResource($todo);
     }
+
+    /**
+     * Delete a todo.
+     * 
+     * @param string $id 
+     * @return mixed
+     */
+    public function delete($id)
+    {
+        $todo = Todo::find($id);
+
+        if (! $todo) abort(404);
+
+        $todo->delete();
+
+        return [
+            'message' => 'The todo was deleted with successfully.'
+        ];
+    }
 }

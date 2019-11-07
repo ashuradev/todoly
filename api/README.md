@@ -10,5 +10,5 @@ API do Todoly feita com Lumen.
 - [x] Listar e buscar todos
 - [x] Adicionar todos
 - [x] Atualizar todos
-- [ ] Remover todos
-- [ ] Melhorar o código e testar tudo
+- [x] Remover todos
+- [x] Melhorar o código e testar tudo
