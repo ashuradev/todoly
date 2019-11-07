@@ -36,8 +36,24 @@ class TodoController extends Controller
 
         return new TodoResource(
             Todo::create([
-                'description'  => $request->description,
+                'description' => $request->description,
             ])
         );
+    }
+
+    /**
+     * Update a todo.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @param string $id
+     * @return mixed
+     */
+    public function update(Request $request, $id) 
+    {
+        $todo = Todo::find($id);
+
+        $todo->update($request->all());
+
+        return new TodoResource($todo);
     }
 }

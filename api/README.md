@@ -9,6 +9,6 @@ API do Todoly feita com Lumen.
 - [x] Criar controller de Todos
 - [x] Listar e buscar todos
 - [x] Adicionar todos
-- [ ] Atualizar todos
+- [x] Atualizar todos
 - [ ] Remover todos
 - [ ] Melhorar o código e testar tudo
