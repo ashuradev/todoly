@@ -2,6 +2,11 @@
 
 Client da API do Todoly feita utilizando React.
 
+# Lista de tarefas
+
+- [x] Iniciar o projeto
+- [x] Adicionar tarefas 
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
