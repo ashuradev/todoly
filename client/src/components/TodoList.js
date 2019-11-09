@@ -12,6 +12,7 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import api from './../services/api'
 
@@ -62,11 +63,11 @@ const TodoList = ({
                         <ListItemText>
                             {todo.description}
                         </ListItemText>
-                        <ListItemSecondaryAction style={{ right: 0 }}>
-                            <IconButton onClick={() => handleTodoDelete(todo)} style={{ padding: 0 }}>
+                        <ListItemSecondaryAction>
+                            <IconButton onClick={() => handleTodoDelete(todo)}>
                                 <DeleteIcon />
                             </IconButton>
-                            <IconButton onClick={() => handleTodoEditRequest(todo)} style={{ padding: 0 }}>
+                            <IconButton onClick={() => handleTodoEditRequest(todo)}>
                                 <EditIcon />
                             </IconButton>
                         </ListItemSecondaryAction>
@@ -96,6 +97,8 @@ const TodoList = ({
                     </Button>
                 </DialogActions>
             </Dialog>
+
+            
         </>
     )
 }

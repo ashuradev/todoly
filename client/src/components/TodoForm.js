@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import FormControl from '@material-ui/core/FormControl'
@@ -11,7 +11,6 @@ const FormButton = ({ children, onClick }) => (
     <Button
         variant="contained" 
         color="primary"
-        style={{ paddingLeft: 25, paddingRight: 25 }}
         onClick={onClick}>
         {children}
     </Button>
@@ -54,7 +53,7 @@ const TodoForm = ({ addTodo, search }) => {
                 <Input onChange={handleChange} />
             </FormControl>
 
-            <Box display="flex" justifyContent="space-between" style={{ margin: '15px auto' }}>
+            <Box display="flex" justifyContent="space-between" mt={2}>
                 <FormButton onClick={handleTodoAdd}>
                     Adicionar
                 </FormButton>

@@ -18,8 +18,8 @@ class TodoController extends Controller
     {
         return TodoResource::collection(
             Todo::where('description', 'LIKE', "%{$request->query('search')}%")
-                ->latest()
-                ->paginate(15)
+                ->orderBy('id', 'DESC')
+                ->get()
         );
     }
 

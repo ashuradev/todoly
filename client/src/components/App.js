@@ -10,8 +10,6 @@ import api from './../services/api'
 class App extends React.Component {
     defaultState = {
         todos: [],
-        currentPage: 1,
-        finishedScroll: false,
         search: ''
     }
 
@@ -20,7 +18,7 @@ class App extends React.Component {
     clearState = () => this.setState(this.defaultState)
 
     addTodo = todo => this.setState(state => ({
-        todo: [todo, ...state.todos]
+        todos: [todo, ...state.todos]
     }))
 
     setSearch = (search, callback = null) => this.setState(() => ({ search }), callback)
@@ -31,13 +29,13 @@ class App extends React.Component {
                 meta,
                 data
             }
-        } = await api.get(`/todos?page=${this.state.currentPage}&search=${this.state.search}`)
+        } = await api.get(`/todos?search=${this.state.search}`)
 
         this.setState(state => ({
-            currentPage: ++meta.current_page,
-            finishedScroll: ++meta.current_page > meta.last_page,
             todos: [...data, ...state.todos]
         }))
+
+        return data
     }
 
     editTodo = todo => this.setState(({ todos }) => ({ 
@@ -69,14 +67,24 @@ class App extends React.Component {
         } = this
 
         return (
-            <Container maxWidth="sm">
-                <Typography align="center" variant="h4" style={{ marginTop: 15, marginBottom: 10 }}>
+            <Container maxWidth="md">
+                <Typography 
+                    align="center" 
+                    variant="h4" 
+                >
                     Todoly
                 </Typography>
 
-                <TodoForm addTodo={addTodo} search={search} />
+                <TodoForm 
+                    addTodo={addTodo} 
+                    search={search} 
+                />
                 
-                <TodoList todos={todos} editTodo={editTodo} deleteTodo={deleteTodo} />
+                <TodoList 
+                    todos={todos} 
+                    editTodo={editTodo} 
+                    deleteTodo={deleteTodo} 
+                />
             </Container>
         )
     }
