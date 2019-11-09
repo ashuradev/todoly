@@ -6,6 +6,10 @@ Client da API do Todoly feita utilizando React.
 
 - [x] Iniciar o projeto
 - [x] Adicionar tarefas 
+- [x] Obter tarefas
+- [x] Deletar tarefas
+- [x] Buscar tarefas
+- [x] Editar tarefas    
 
 ---
 
